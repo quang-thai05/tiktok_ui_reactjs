@@ -9,7 +9,6 @@ import {
   faEarthAsia,
   faKeyboard,
   faCloudUpload,
-  faMessage,
   faUser,
   faCoins,
   faGear,
@@ -17,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import HeadlessTippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
@@ -25,7 +25,7 @@ import Button from '~/components/Button';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
-import 'tippy.js/dist/tippy.css';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -156,7 +156,7 @@ function Header() {
 
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
-              <img
+              <Image
                 src="https://p9-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/1601759793852418.jpeg?x-expires=1694422800&x-signature=9mQXWvigSNzim0Hf3WA9D78WVLQ%3D"
                 className={cx('user-avatar')}
                 alt="Nguyen Van A"
