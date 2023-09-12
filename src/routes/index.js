@@ -1,5 +1,5 @@
 import { HeaderOnly } from '~/components/Layout';
-
+import routeConfig from '~/config/routes';
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
@@ -8,11 +8,11 @@ import Search from '~/pages/Search';
 
 // Public Routes don't need to login
 const publicRoutes = [
-  { path: '/', component: Home },
-  { path: '/following', component: Following },
-  { path: '/:nickname', component: Profile },
-  { path: '/upload', component: Upload, layout: HeaderOnly },
-  { path: '/search', component: Search, layout: null },
+  { path: routeConfig.home, component: Home },
+  { path: routeConfig.following, component: Following },
+  { path: routeConfig.profile, component: Profile },
+  { path: routeConfig.upload, component: Upload, layout: HeaderOnly },
+  { path: routeConfig.search, component: Search, layout: null },
 ];
 
 // Private Routes need to login
